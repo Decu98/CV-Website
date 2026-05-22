@@ -1,0 +1,17 @@
+name = "bdec-portfolio"
+main = "worker.js"
+compatibility_date = "2026-05-22"
+
+# Serverless Static Assets Configuration (Modern Wrangler v3+)
+# This maps the public assets folder directly to Cloudflare's Edge Network.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Enable Node.js compatibility layer if ever needed for server-side utilities
+node_compat = true
+
+# Production Environment Variables & Settings
+[vars]
+ENVIRONMENT = "production"
+SLA_TARGET = "99.99%"

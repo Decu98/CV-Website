@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" id="meta-desc" content="B. Dec - DevOps & Cloud Infrastructure Engineer Portfolio. Automatyzacja, IaC, Kubernetes i skalowalna architektura chmurowa.">
+    <title id="doc-title">B. Dec | DevOps & Cloud Infrastructure Engineer | Interaktywne CV</title>
+    <!-- Google Fonts: Space Grotesk (headers) & Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lang-pl">
+
+    <!-- Background Zero-Gravity Particles Canvas -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- Ambient glowing cosmic energy orbs -->
+    <div class="cosmic-orb orb-1"></div>
+    <div class="cosmic-orb orb-2"></div>
+    <div class="cosmic-orb orb-3"></div>
+
+    <!-- Main Application Wrapper -->
+    <div class="app-container">
+        
+        <!-- Header & Glassmorphic Navigation -->
+        <header class="app-header">
+            <div class="logo-area" id="header-logo">
+                <span class="logo-text">B.DEC</span>
+            </div>
+            
+            <nav class="nav-bar">
+                <button class="nav-tab active" id="tab-btn-home" data-tab="home" aria-label="Profil zawodowy">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="lang-pl">O Mnie</span>
+                    <span class="lang-en">About Me</span>
+                </button>
+                <button class="nav-tab" id="tab-btn-projects" data-tab="projects" aria-label="Projekty i wdrożenia chmurowe">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    <span class="lang-pl">Projekty</span>
+                    <span class="lang-en">Experience</span>
+                </button>
+                <button class="nav-tab" id="tab-btn-contact" data-tab="contact" aria-label="Kontakt i rekrutacja">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span class="lang-pl">Kontakt</span>
+                    <span class="lang-en">Contact</span>
+                </button>
+                <div class="lang-switch-capsule">
+                    <button type="button" class="lang-switch-btn pl active" id="lang-btn-pl" aria-label="Wersja Polska">PL</button>
+                    <button type="button" class="lang-switch-btn en" id="lang-btn-en" aria-label="English Version">EN</button>
+                    <div class="lang-switch-glider"></div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Dynamic Content Area -->
+        <main class="app-main">
+            
+            <!-- SECTION 1: HOME (DevOps Profile & Specializations) -->
+            <section id="home" class="tab-content active" aria-hidden="false">
+                <div class="hero-section">
+                    <div class="badge-container float">
+                        <span class="pulse-dot"></span>
+                        <span class="badge-text">DEVOPS &amp; PLATFORM ENGINEER</span>
+                    </div>
+                    
+                    <h1 class="hero-title lang-pl">
+                        Automatyzacja Infrastruktury <span class="glow-text">&amp; Orkiestracja Chmury</span>
+                    </h1>
+                    <h1 class="hero-title lang-en">
+                        Infrastructure Automation <span class="glow-text">&amp; Cloud Orchestration</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle lang-pl">
+                        Cześć! Nazywam się <strong>Bartłomiej Dec</strong>. Jestem inżynierem DevOps ukierunkowanym na platformę i infrastrukturę chmurową. Projektuję i wdrażam wysoce skalowalne, stabilne środowiska (GCP, Kubernetes, Linux) w duchu GitOps. Dzięki 3-letniemu doświadczeniu w inżynierii IoT oraz mechatronice rozumiem systemy end-to-end – od warstwy fizycznej maszyn i sensorów, aż po orkiestrację chmurową, SRE i automatyzację operacji produkcyjnych.
+                    </p>
+                    <p class="hero-subtitle lang-en">
+                        Hi! I'm <strong>Bartłomiej Dec</strong>. I'm an infrastructure-focused DevOps Engineer with hands-on experience operating and automating production systems across cloud and hybrid environments, backed by a 3-year background in IoT and industrial systems engineering. I design and deploy highly scalable, stable environments (GCP, Kubernetes, Linux) in the spirit of GitOps, understanding systems end-to-end – from physical machine layers and sensor telemetry to cloud orchestration, SRE, and production operations automation.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" id="btn-explore-now">
+                            <span class="lang-pl">Przejdź do Wdrożeń i Doświadczenia</span>
+                            <span class="lang-en">Explore Experience &amp; Deployments</span>
+                        </button>
+                        <button class="btn btn-secondary" id="btn-download-cv" onclick="window.print();">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span class="lang-pl">Zapisz CV jako PDF</span>
+                            <span class="lang-en">Save CV as PDF</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Technical Specializations Grid -->
+                <div class="features-grid">
+                    <div class="glass-card interactive-hover">
+                        <div class="card-icon-wrapper purple-glow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="lang-pl">Chmura &amp; Platform Engineering</h3>
+                        <h3 class="lang-en">Cloud &amp; Platform Engineering</h3>
+                        
+                        <p class="lang-pl">Projektowanie i wdrażanie infrastruktury jako kod (IaC), budowa zautomatyzowanych procesów CI/CD oraz integracja systemów chmurowych z wykorzystaniem architektury serverless i bezpiecznych uprawnień IAM.</p>
+                        <p class="lang-en">Designing and implementing infrastructure as code (IaC), building automated CI/CD pipelines, and integrating cloud systems using serverless architectures and secure IAM configurations.</p>
+                        
+                        <div class="skill-tags">
+                            <span class="skill-tag">GCP</span>
+                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">Cloud Functions</span>
+                            <span class="skill-tag">GitHub Actions</span>
+                            <span class="skill-tag">Jenkins</span>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card interactive-hover">
+                        <div class="card-icon-wrapper cyan-glow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect>
+                                <path d="M7 2v20M17 2v20M2 7h20M2 17h20"></path>
+                            </svg>
+                        </div>
+                        <h3 class="lang-pl">Orkiestracja &amp; Observability</h3>
+                        <h3 class="lang-en">Orchestration &amp; Observability</h3>
+                        
+                        <p class="lang-pl">Zarządzanie klastrami kontenerów Kubernetes w środowiskach produkcyjnych, automatyzacja wdrożeń z wykorzystaniem GitOps, a także wdrażanie zaawansowanego monitorowania, SRE i incident response.</p>
+                        <p class="lang-en">Managing Kubernetes container clusters in production environments, automating deployments via GitOps, and implementing advanced monitoring, SRE, and incident response workflows.</p>
+                        
+                        <div class="skill-tags">
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Helm</span>
+                            <span class="skill-tag">ArgoCD</span>
+                            <span class="skill-tag">Prometheus</span>
+                            <span class="skill-tag">Grafana</span>
+                            <span class="skill-tag">PagerDuty</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card interactive-hover">
+                        <div class="card-icon-wrapper indigo-glow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="lang-pl">Sieci, Bezpieczeństwo &amp; IoT</h3>
+                        <h3 class="lang-en">Networking, Security &amp; IoT</h3>
+                        
+                        <p class="lang-pl">Utrzymanie bezpiecznych sieci VPN (Tailscale), VPC Peering, firewali Fortigate oraz Cloudflare Zero Trust. Integracja systemów telemetrycznych, sensorów maszyn masowych oraz baz danych relacyjnych i dokumentowych.</p>
+                        <p class="lang-en">Maintaining secure networks using VPN (Tailscale), VPC Peering, Fortigate firewalls, and Cloudflare Zero Trust. Integrating telemetry systems, industrial sensors, and relational or document databases.</p>
+                        
+                        <div class="skill-tags">
+                            <span class="skill-tag">Zero Trust</span>
+                            <span class="skill-tag">Tailscale</span>
+                            <span class="skill-tag">VPC Peering</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MariaDB</span>
+                            <span class="skill-tag">Industrial IoT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WYKSZTAŁCENIE (EDUCATION) SECTION -->
+                <div class="education-section" style="margin-top: 4.5rem;">
+                    <div class="section-header" style="margin-bottom: 2.5rem; text-align: center;">
+                        <h2 class="section-title lang-pl" style="font-size: 2rem;">Wykształcenie &amp; Zaplecze Naukowe</h2>
+                        <h2 class="section-title lang-en" style="font-size: 2rem;">Education &amp; Academic Background</h2>
+                        
+                        <p class="section-subtitle lang-pl" style="font-size: 0.95rem; max-width: 600px; margin: 0.5rem auto 0 auto;">Studia techniczne ukończone na Politechnice Warszawskiej, stanowiące inżynieryjny fundament pod systemowe podejście do DevOps.</p>
+                        <p class="section-subtitle lang-en" style="font-size: 0.95rem; max-width: 600px; margin: 0.5rem auto 0 auto;">Technical degrees completed at the Warsaw University of Technology, providing the engineering foundation for a systemic approach to DevOps.</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="glass-card interactive-hover">
+                            <div class="card-icon-wrapper purple-glow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                                </svg>
+                            </div>
+                            <span class="project-category lang-pl" style="color: var(--neon-purple); font-size: 0.72rem; font-weight: 600;">2024 - 2026 | STUDIA MAGISTERSKIE (M.SC. ENG.)</span>
+                            <span class="project-category lang-en" style="color: var(--neon-purple); font-size: 0.72rem; font-weight: 600;">2024 - 2026 | MASTER'S DEGREE (M.SC. ENG.)</span>
+                            
+                            <h3 class="lang-pl" style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Mechatronika Pojazdów i Maszyn Roboczych</h3>
+                            <h3 class="lang-en" style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Mechatronics of Vehicles and Construction Machinery</h3>
+                            
+                            <h4 class="lang-pl" style="font-weight: 500; font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Politechnika Warszawska | Warszawa</h4>
+                            <h4 class="lang-en" style="font-weight: 500; font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Warsaw University of Technology | Warsaw</h4>
+                            
+                            <p class="lang-pl" style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);"><strong>Praca magisterska:</strong> Zastosowanie rekurencyjnych sieci neuronowych (RNN) do predykcji ruchu układów dynamicznych na przykładzie modelu oscylatora harmonicznego.</p>
+                            <p class="lang-en" style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);"><strong>Thesis:</strong> Application of recurrent neural networks (RNN) for motion prediction of dynamic systems using the harmonic oscillator model as an example.</p>
+                        </div>
+
+                        <div class="glass-card interactive-hover">
+                            <div class="card-icon-wrapper cyan-glow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                                </svg>
+                            </div>
+                            <span class="project-category lang-pl" style="color: var(--neon-cyan); font-size: 0.72rem; font-weight: 600;">2020 - 2023 | STUDIA INŻYNIERSKIE (B.SC. ENG.)</span>
+                            <span class="project-category lang-en" style="color: var(--neon-cyan); font-size: 0.72rem; font-weight: 600;">2020 - 2023 | BACHELOR'S DEGREE (B.SC. ENG.)</span>
+                            
+                            <h3 class="lang-pl" style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Mechatronika, Robotyka i Automatyka</h3>
+                            <h3 class="lang-en" style="margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Mechatronics, Robotics and Automation</h3>
+                            
+                            <h4 class="lang-pl" style="font-weight: 500; font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Politechnika Warszawska | Warszawa</h4>
+                            <h4 class="lang-en" style="font-weight: 500; font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Warsaw University of Technology | Warsaw</h4>
+                            
+                            <p class="lang-pl" style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);"><strong>Praca inżynierska:</strong> Opracowanie modułu komunikacji radiowej LoRa umożliwiającego przesył danych pomiarowych z sensorów dla zastosowań Internetu Rzeczy (IoT).</p>
+                            <p class="lang-en" style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);"><strong>Thesis:</strong> Development of a LoRa communication module enabling sensor connectivity for Internet of Things (IoT) applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: PROJECTS (DEVOPS SOLUTIONS) -->
+            <section id="projects" class="tab-content" aria-hidden="true">
+                <div class="section-header">
+                    <h2 class="section-title lang-pl">Doświadczenie &amp; Wdrożenia</h2>
+                    <h2 class="section-title lang-en">Professional Experience &amp; Deployments</h2>
+                    
+                    <p class="section-subtitle lang-pl">Prawdziwe kamienie milowe w obszarze chmury, orkiestracji i IoT zrealizowane w komercyjnych środowiskach produkcyjnych.</p>
+                    <p class="section-subtitle lang-en">Real-world milestones in cloud, orchestration, and IoT executed in commercial production environments.</p>
+                </div>
+
+                <div class="projects-grid">
+                    
+                    <!-- Experience 1 -->
+                    <div class="glass-card project-card interactive-hover">
+                        <div class="project-header">
+                            <span class="project-category" style="color: var(--neon-purple);">Locon Sp. z o.o. | platform &amp; cloud</span>
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.25rem;">
+                                <h3 class="project-title" style="margin-top: 0;">Platform Engineer</h3>
+                                <span class="lang-pl" style="font-size: 0.8rem; color: var(--neon-cyan); font-family: var(--font-headers);">09.2025 - Obecnie</span>
+                                <span class="lang-en" style="font-size: 0.8rem; color: var(--neon-cyan); font-family: var(--font-headers);">Sep 2025 - Present</span>
+                            </div>
+                        </div>
+                        <p class="project-description lang-pl">
+                            Zaprojektowałem i wdrożyłem opartą na <strong>GCP</strong> platformę śledzenia cyklu życia urządzeń IoT dla ponad 50 000 maszyn w logistyce. Stworzyłem pełną automatyzację infrastruktury (<strong>Terraform</strong>), pipeline'y CI/CD oraz integrację 6+ zewnętrznych systemów za pomocą <strong>Cloud Functions</strong>. Zbudowałem system scoringowy dla klientów w <strong>BigQuery</strong> oraz asystowane przez AI procesy incident response zintegrowane z <strong>PagerDuty</strong> do automatycznej analizy incydentów.
+                        </p>
+                        <p class="project-description lang-en">
+                            Designed and implemented a GCP-based lifecycle tracking platform supporting 50,000+ devices across logistics and service operations. Built infrastructure automation and data aggregation workflows integrating 6+ systems using Terraform, Cloud Functions, and CI/CD pipelines. Built internal AI-assisted workflows, BigQuery scoring systems, and incident response tooling integrated with PagerDuty to support production incident analysis.
+                        </p>
+                        <div class="project-tags">
+                            <span class="skill-tag">GCP</span>
+                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">Cloud Functions</span>
+                            <span class="skill-tag">BigQuery</span>
+                            <span class="skill-tag">PagerDuty</span>
+                            <span class="skill-tag">Cloudflare Workers</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#contact" class="project-link" onclick="document.getElementById('tab-btn-contact').click();">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="link-icon">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span class="lang-pl">Zapytaj o Case Study</span>
+                                <span class="lang-en">Inquire about Case Study</span>
+                            </a>
+                            <span class="project-link active-link" style="font-size: 0.78rem;">
+                                <span class="lang-pl">Platforma IoT &amp; SRE</span>
+                                <span class="lang-en">IoT Platform &amp; SRE</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="glass-card project-card interactive-hover">
+                        <div class="project-header">
+                            <span class="project-category" style="color: var(--neon-cyan);">Locon Sp. z o.o. | kubernetes &amp; gitops</span>
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.25rem;">
+                                <h3 class="project-title" style="margin-top: 0;">DevOps Engineer</h3>
+                                <span class="lang-pl" style="font-size: 0.8rem; color: var(--neon-cyan); font-family: var(--font-headers);">04.2025 - 09.2025</span>
+                                <span class="lang-en" style="font-size: 0.8rem; color: var(--neon-cyan); font-family: var(--font-headers);">Apr 2025 - Sep 2025</span>
+                            </div>
+                        </div>
+                        <p class="project-description lang-pl">
+                            Odpowiadałem za pełne administrowanie klastrami <strong>Kubernetes (GKE)</strong> na GCP, konfigurację Helm, konteneryzację i zastąpienie manualnych wdrożeń nowoczesnym potokiem <strong>GitOps (ArgoCD, GitHub Actions, Jenkins)</strong>. Przeprowadziłem migrację produkcji z środowisk on-premise Proxmox na klastry GKE. Skonfigurowałem bezpieczną sieć VPC Peering, reverse proxy, Tailscale VPN, firewalle Fortigate oraz Cloudflare Zero Trust (RBAC, WIF).
+                        </p>
+                        <p class="project-description lang-en">
+                            Administered Kubernetes clusters on GCP, containerizing applications and configuring workloads through Helm values. Replaced manual deployments with a full CI/CD pipeline using ArgoCD, GitHub Actions, Jenkins, and Terraform. Configured GCP resources, secure networks (VPC Peering, firewalls, Tailscale VPN), and migrated production infrastructure from Proxmox to GKE.
+                        </p>
+                        <div class="project-tags">
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">ArgoCD</span>
+                            <span class="skill-tag">GitHub Actions</span>
+                            <span class="skill-tag">Tailscale VPN</span>
+                            <span class="skill-tag">Zero Trust</span>
+                            <span class="skill-tag">Prometheus &amp; Grafana</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#contact" class="project-link" onclick="document.getElementById('tab-btn-contact').click();">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="link-icon">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span class="lang-pl">Zapytaj o szczegóły wdrożenia</span>
+                                <span class="lang-en">Inquire about migration details</span>
+                            </a>
+                            <span class="project-link active-link" style="font-size: 0.78rem;">
+                                On-Prem to GKE Migration
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="glass-card project-card interactive-hover">
+                        <div class="project-header">
+                            <span class="project-category" style="color: var(--neon-indigo);">IoT Solution | industrial iot &amp; ot/it</span>
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.25rem;">
+                                <h3 class="project-title" style="margin-top: 0;">Product Application Engineer</h3>
+                                <span class="lang-pl" style="font-size: 0.8rem; color: var(--neon-cyan); font-family: var(--font-headers);">04.2023 - 09.2025</span>
+                                <span class="lang-en" style="font-size: 0.8rem; color: var(--neon-cyan); font-family: var(--font-headers);">Apr 2023 - Sep 2025</span>
+                            </div>
+                        </div>
+                        <p class="project-description lang-pl">
+                            Łączyłem światy operacyjne (OT) z systemami informatycznymi (IT). Integrowałem systemy sensorów maszyn fizycznych z bazami danych <strong>MariaDB</strong> i pipelines zbierania danych telemetrycznych za pomocą protokołów przemysłowych IIoT. Projektowałem zaawansowane pulpity wizualizacji parametrów maszyn produkcyjnych w <strong>Grafanie</strong>, a także wdrażałem systemy szybkiego alertowania o awariach fizycznych sensorów.
+                        </p>
+                        <p class="project-description lang-en">
+                            Integrated physical machine sensor systems with the IT layer, working with industrial communication protocols in Industrial IoT environments. Configured data processing pipelines for sensor data, managed data in MariaDB, configured monitoring dashboards, and acted as a bridge between Operational Technology (OT) and IT teams.
+                        </p>
+                        <div class="project-tags">
+                            <span class="skill-tag">Industrial IoT</span>
+                            <span class="skill-tag">OT/IT Integration</span>
+                            <span class="skill-tag">MariaDB</span>
+                            <span class="skill-tag">Grafana Alerting</span>
+                            <span class="skill-tag">Sensor Telemetry</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#contact" class="project-link" onclick="document.getElementById('tab-btn-contact').click();">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="link-icon">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span class="lang-pl">Zapytaj o integracje OT/IT</span>
+                                <span class="lang-en">Inquire about OT/IT integrations</span>
+                            </a>
+                            <span class="project-link active-link" style="font-size: 0.78rem;">
+                                Sensor Data Pipelines
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 3: CONTACT & RECRUITMENT -->
+            <section id="contact" class="tab-content" aria-hidden="true">
+                <div class="contact-grid">
+                    <!-- Left: Info Panel -->
+                    <div class="contact-info-panel glass-card">
+                        <h2 class="lang-pl">Nawiążmy współpracę!</h2>
+                        <h2 class="lang-en">Let's work together!</h2>
+                        
+                        <p class="panel-intro lang-pl">Szukasz inżyniera DevOps z głębokim zrozumieniem infrastruktury chmurowej, orkiestracji kontenerów i systemów fizycznych? Skontaktuj się ze mną bezpośrednio przez poniższe kanały.</p>
+                        <p class="panel-intro lang-en">Are you looking for a DevOps Engineer with a deep understanding of cloud infrastructure, container orchestration, and physical systems? Contact me directly through the channels below.</p>
+                        
+                        <div class="contact-channels">
+                            <div class="channel-card">
+                                <div class="channel-icon text-cyan">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="channel-details">
+                                    <h4 class="lang-pl">Bezpośredni E-mail</h4>
+                                    <h4 class="lang-en">Direct Email</h4>
+                                    <a href="mailto:dec.bartlomiej09@gmail.com" id="link-email">dec.bartlomiej09@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="channel-card">
+                                <div class="channel-icon text-indigo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div class="channel-details">
+                                    <h4 class="lang-pl">Numer telefonu</h4>
+                                    <h4 class="lang-en">Phone Number</h4>
+                                    <a href="tel:+48536984660" id="link-phone">+48 536 984 660</a>
+                                </div>
+                            </div>
+                            
+                            <div class="channel-card">
+                                <div class="channel-icon text-purple">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </div>
+                                <div class="channel-details">
+                                    <h4>LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/bart%C5%82omiej-dec-649003213/" target="_blank" rel="noopener noreferrer" id="link-linkedin">linkedin.com/in/bartlomiej-dec</a>
+                                </div>
+                            </div>
+
+                            <div class="channel-card">
+                                <div class="channel-icon text-indigo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                </div>
+                                <div class="channel-details">
+                                    <h4 class="lang-pl">Konto GitHub (IaC &amp; Skrypty)</h4>
+                                    <h4 class="lang-en">GitHub Profile (IaC &amp; Scripting)</h4>
+                                    <a href="https://github.com/bdec" target="_blank" rel="noopener noreferrer" id="link-github">github.com/bdec</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Contact Form -->
+                    <div class="contact-form-panel glass-card">
+                        <h3 class="lang-pl">Wyślij zaproszenie / zapytanie</h3>
+                        <h3 class="lang-en">Send an invitation / inquiry</h3>
+                        
+                        <form id="cosmic-contact-form">
+                            <div class="input-group">
+                                <label for="form-name" class="lang-pl">Nazwa Firmy / Imię rekrutera</label>
+                                <label for="form-name" class="lang-en">Company Name / Recruiter's Name</label>
+                                <input type="text" id="form-name" required placeholder="np. Locon / Tomasz">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="form-email" class="lang-pl">Adres E-mail do kontaktu</label>
+                                <label for="form-email" class="lang-en">Contact E-mail Address</label>
+                                <input type="email" id="form-email" required placeholder="tomasz@firma.pl">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="form-message" class="lang-pl">Wybrane środowisko chmurowe / Szczegóły projektu</label>
+                                <label for="form-message" class="lang-en">Target Cloud Environment / Project Details</label>
+                                <textarea id="form-message" rows="5" required placeholder="Cześć, chcielibyśmy omówić z Tobą utrzymanie platformy GCP oraz orkiestrację Kubernetes/GKE..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block" id="btn-submit-form">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                                <span class="lang-pl">Nadaj Sygnał Infrastrukturalny</span>
+                                <span class="lang-en">Transmit Infrastructure Signal</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p class="lang-pl">&copy; 2026 B. Dec. Infrastruktura zdefiniowana w 100% jako kod w stanie nieważkości.</p>
+            <p class="lang-en">&copy; 2026 B. Dec. Infrastructure defined 100% as code in zero gravity.</p>
+            
+            <div class="footer-links">
+                <span class="status-indicator">
+                    <span class="pulse-dot green"></span>
+                    <span class="lang-pl">SLA: 99.99% Dostępny do pracy</span>
+                    <span class="lang-en">SLA: 99.99% Available for work</span>
+                </span>
+            </div>
+        </footer>
+        
+    </div>
+
+    <!-- Link to JavaScript bundle -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[margin=0.6in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{fontawesome5}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{tabularx}
+
+\pagestyle{empty}
+
+% - Colors -
+\definecolor{accent}{RGB}{0, 102, 153}
+\definecolor{darktext}{RGB}{50, 50, 50}
+
+% - Links -
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+% - Sections -
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}[\vspace{-0.5em}{\color{accent}\rule{\textwidth}{0.5pt}}]
+\titlespacing*{\section}{0pt}{0.7em}{0.3em}
+
+% - Entry -
+\newcommand{\entry}[4]{%
+	\noindent\textbf{\color{darktext}#1} \hfill {\small #2} \\
+	\textit{#3} \hfill {\small #4}%
+}
+
+\begin{document}
+	
+	% ============================================================
+	%  HEADER
+	% ============================================================
+	\noindent
+	\begin{minipage}[t]{0.20\textwidth}
+		\vspace{0pt}
+		\includegraphics[width=\linewidth]{photo.jpg}
+	\end{minipage}%
+	\hfill
+	\begin{minipage}[t]{0.76\textwidth}
+		\vspace{0pt}
+		{\huge\bfseries\color{accent} Bart\l{}omiej Dec}\\[0.4em]
+		{\large DevOps Engineer}\\[0.6em]
+		{\small
+			\faIcon{phone}\ \ 536\,984\,660 \quad\textbar\quad
+			\faIcon{envelope}\ \ \href{mailto:dec.bartlomiej09@gmail.com}{dec.bartlomiej09@gmail.com}\\[0.2em]
+			\faIcon{map-marker-alt}\ \ Warsaw, Poland \quad\textbar\quad
+			\faIcon{linkedin}\ \ \href{https://www.linkedin.com/in/bart\%C5\%82omiej-dec-649003213/}{linkedin.com/in/bartlomiej-dec}
+		}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	
+	% ============================================================
+	%  PROFESSIONAL PROFILE
+	% ============================================================
+	\section{Professional Profile}
+	
+	Infrastructure-focused DevOps Engineer with hands-on experience operating and automating production systems across cloud and hybrid environments, backed by a 3-year background in IoT and industrial systems engineering. Experienced in Kubernetes, Linux administration, infrastructure automation, observability, and troubleshooting distributed systems.
+	
+	With a mechatronics and Industrial IoT background, I understand systems end-to-end, from hardware and sensor infrastructure to cloud platforms and production operations.
+	
+	% ============================================================
+	%  PROFESSIONAL EXPERIENCE
+	% ============================================================
+	\section{Professional Experience}
+	
+	\entry{Platform Engineer}{Sep 2025 - Present}{Locon Sp. z o.o.}{Warsaw}
+	\begin{itemize}[leftmargin=1.5em, itemsep=0.1em, topsep=0.2em]
+		\item Designed and implemented a GCP-based lifecycle tracking platform supporting 50,000+ devices across logistics and service operations.
+		\item Built infrastructure automation and data aggregation workflows integrating 6+ systems using Terraform, Cloud Functions, and CI/CD pipelines.
+		\item Built internal AI-assisted automation workflows for operational and financial systems.
+		\item Created repository indexing and cross-service debugging workflows to improve troubleshooting across distributed systems.
+		\item Implemented a customer scoring system in BigQuery to predict purchases without incentives such as SMS, email, or push notifications.
+		\item Developed AI-assisted operational tooling integrated with PagerDuty to support automated production incident analysis.
+		\item Maintained Cloudflare services: DNS, domains, Zero Trust (RBAC), and Cloudflare Workers.
+	\end{itemize}
+	
+	\vspace{0.3em}
+	
+	\entry{DevOps Engineer}{Apr 2025 - Sep 2025}{Locon Sp. z o.o.}{Warsaw}
+	\begin{itemize}[leftmargin=1.5em, itemsep=0.1em, topsep=0.2em]
+		\item Administered Kubernetes clusters on GCP, including application containerization and configuration through Helm values.
+		\item Replaced manual deployments with a full CI/CD process using GitHub Actions, ArgoCD, Jenkins, and Terraform, automating and documenting previously undocumented workflows.
+		\item Configured GCP projects, including IAM, VPC, VMs, Cloud SQL, Secrets, Buckets, Artifact Registry, Service Accounts, and Workload Identity Federation.
+		\item Configured and maintained secure network connectivity between distributed GCP environments using VPC Peering, reverse proxies, and load balancing.
+		\item Maintained secure network infrastructure including Fortigate firewalls, VPN connectivity (Tailscale), and Cloudflare Zero Trust access controls.
+		\item Migrated and stabilized production infrastructure from on-premise Proxmox environments to GKE, reducing operational overhead and improving deployment reliability.
+		\item Restored and stabilized pre-production infrastructure after two years of inactivity, enabling continued testing and deployment workflows.
+		\item Implemented observability and monitoring solutions using Prometheus and Grafana to support production system reliability and incident response.
+	\end{itemize}
+	
+	\vspace{0.3em}
+	
+	\entry{Product Application Engineer}{Apr 2023 - Sep 2025}{IoT Solution}{Warsaw}
+	\begin{itemize}[leftmargin=1.5em, itemsep=0.1em, topsep=0.2em]
+		\item Integrated physical machine sensor systems with the IT layer, working with industrial communication protocols in Industrial IoT environments.
+		\item Configured data processing pipelines for sensor data and managed data in MariaDB.
+		\item Configured monitoring dashboards and alerting workflows for end-to-end operational visibility across industrial IoT systems.
+		\item Acted as a bridge between Operational Technology (OT) and IT teams.
+	\end{itemize}
+	
+	\vspace{0.3em}
+	
+	\entry{Operations Manager Assistant}{Aug 2022 - Apr 2023}{IoT Solution}{Warsaw}
+	
+	% ============================================================
+	%  EDUCATION
+	% ============================================================
+	\section{Education}
+	
+	\entry{M.Sc. Eng. - Mechatronics of Vehicles and Construction Machinery}{2024 - 2026}{Warsaw University of Technology}{Warsaw}\\
+	{\small\textit{Thesis: Application of recurrent neural networks for motion prediction of dynamic systems using the harmonic oscillator model as an example}}
+	
+	\vspace{0.3em}
+	
+	\entry{B.Sc. Eng. - Mechatronics, Robotics and Automation}{2020 - 2023}{Warsaw University of Technology}{Warsaw}\\
+	{\small\textit{Thesis: Development of a LoRa communication module enabling sensor connectivity for Internet of Things (IoT) applications}}
+	
+	% ============================================================
+	%  TECHNICAL SKILLS
+	% ============================================================
+	\section{Core Competencies}
+	
+	\textbf{Linux \& Infrastructure:} Linux administration, troubleshooting, Kubernetes, Docker, Helm, distributed systems, production infrastructure \\
+	\textbf{Cloud \& Platform Engineering:} GCP, Terraform, infrastructure automation \\
+	\textbf{CI/CD \& Automation:} GitHub Actions, ArgoCD, Jenkins, GitOps workflows, operational automation \\
+	\textbf{Monitoring \& Observability:} Prometheus, Grafana, PagerDuty, alerting, incident response, production monitoring \\
+	\textbf{Networking \& Security:} VPC, VPC Peering, Nginx, Cloudflare Zero Trust, VPN (Tailscale), Fortigate, load balancing \\
+	\textbf{Programming \& Scripting:} Python, Bash, SQL, TypeScript, JavaScript \\
+	\textbf{Databases \& Messaging:} PostgreSQL, MSSQL, MariaDB, Firestore, RabbitMQ, Pub/Sub \\
+	\textbf{Industrial \& IoT Systems:} Industrial IoT, OT/IT integration, sensor infrastructure, telemetry systems
+	
+	% ============================================================
+	%  LANGUAGES
+	% ============================================================
+	\section{Languages}
+	
+	\noindent Polish - Native \quad\textbar\quad English - C1
+	
+	% ============================================================
+	%  GDPR
+	% ============================================================
+	\vspace{\fill}
+	\begin{center}
+		\footnotesize\color{gray}
+		I hereby consent to the processing of my personal data for the purposes necessary to carry out the recruitment process,
+		in accordance with the Act of 10 May 2018 on the Protection of Personal Data and the GDPR.
+	\end{center}
+	
+\end{document}
