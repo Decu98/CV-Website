@@ -24,8 +24,10 @@
     --gradient-glow: linear-gradient(135deg, rgba(157, 78, 221, 0.2), rgba(10, 245, 255, 0.2));
     
     /* Fonts */
-    --font-headers: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-headers: 'Pixelify Sans', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-pixel-retro: 'Press Start 2P', monospace;
+    --font-pixel-mono: 'VT323', monospace;
     
     /* System shadow & blur effects */
     --glass-blur: blur(16px);
@@ -177,13 +179,13 @@ html, body {
 }
 
 .logo-text {
-    font-family: var(--font-headers);
-    font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: 0.15em;
+    font-family: var(--font-pixel-retro);
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
     background: var(--gradient-cosmic);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(10, 245, 255, 0.2);
 }
 
 .nav-bar {
@@ -331,10 +333,10 @@ html, body {
 }
 
 .badge-text {
-    font-size: 0.75rem;
-    font-family: var(--font-headers);
-    font-weight: 600;
-    letter-spacing: 0.1em;
+    font-size: 1.15rem;
+    font-family: var(--font-pixel-mono);
+    font-weight: 500;
+    letter-spacing: 0.05em;
     color: var(--neon-cyan);
 }
 
@@ -515,10 +517,10 @@ html, body {
 }
 
 .skill-tag {
-    font-size: 0.75rem;
-    font-family: var(--font-headers);
+    font-size: 1.15rem;
+    font-family: var(--font-pixel-mono);
     font-weight: 500;
-    padding: 0.25rem 0.65rem;
+    padding: 0.15rem 0.65rem;
     border-radius: 4px;
     background: rgba(99, 102, 241, 0.1);
     border: 1px solid rgba(99, 102, 241, 0.25);
@@ -801,6 +803,9 @@ html, body {
     align-items: center;
     gap: 0.5rem;
     color: var(--text-secondary);
+    font-family: var(--font-pixel-mono);
+    font-size: 1.15rem;
+    letter-spacing: 0.05em;
 }
 
 /* -------------------------------------------------------------
