@@ -8,6 +8,9 @@ export default {
 
     // Structured logging for incoming request (SRE standard)
     console.log(`[REQUEST] ${request.method} ${url.pathname} | IP: ${clientIP} | Country: ${country} | UA: ${userAgent}`);
+    
+    // Safe SRE debugging: log ONLY the names of the environment variables bound to this worker (no values!)
+    console.log(`[ENV DEBUG] Available environment bindings: ${JSON.stringify(Object.keys(env))}`);
 
     // Standard security and content headers for JSON responses
     const jsonHeaders = {
