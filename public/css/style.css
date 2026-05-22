@@ -922,3 +922,16 @@ body.lang-en .lang-switch-glider {
         margin-top: 0.5rem;
     }
 }
+
+/* -------------------------------------------------------------
+ * PREMIUM ROTATING LOADING SPINNER FOR CONTACT FORM
+ * ------------------------------------------------------------- */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.btn-icon.spinner {
+    animation: spin 1s linear infinite;
+    flex-shrink: 0;
+}

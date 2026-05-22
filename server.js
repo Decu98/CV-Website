@@ -13,8 +13,36 @@ app.use((req, res, next) => {
     next();
 });
 
+// Parse JSON payloads for API routing
+app.use(express.json());
+
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Intercept POST request for contact form API (Express local mock mode)
+app.post('/api/contact', (req, res) => {
+    const { name, email, message } = req.body || {};
+    
+    // Basic validation
+    if (!name || !email || !message || name.trim() === '' || email.trim() === '' || message.trim() === '') {
+        console.error(`[EXPRESS API ERROR] Validation failed: missing parameters`);
+        return res.status(400).json({ success: false, error: 'All fields (name, email, message) are required.' });
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        console.error(`[EXPRESS API ERROR] Validation failed: invalid email ${email}`);
+        return res.status(400).json({ success: false, error: 'Invalid email address format.' });
+    }
+    
+    console.log(`[EXPRESS MOCK EMAIL] Received contact form submission:`);
+    console.log(`- Name: ${name}`);
+    console.log(`- Email: ${email}`);
+    console.log(`- Message: ${message}`);
+    
+    res.json({ success: true, mock: true });
+});
 
 // Fallback to index.html for single-page application routing if needed, 
 // though static middleware will automatically serve index.html at '/'

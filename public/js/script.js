@@ -288,7 +288,9 @@ function initLanguageSystem() {
                 email: "tomasz@firma.pl",
                 message: "Cześć, chcielibyśmy omówić z Tobą utrzymanie platformy GCP oraz orkiestrację Kubernetes/GKE..."
             },
-            alert: "Sygnał rekrutacyjny nadany pomyślnie! Jako DevOps odpiszę na Twój e-mail w czasie krótszym niż SLA ;)"
+            alert: "Sygnał rekrutacyjny nadany pomyślnie! Jako DevOps odpiszę na Twój e-mail w czasie krótszym niż SLA ;)",
+            error: "Wystąpił błąd podczas nadawania sygnału. Spróbuj ponownie lub napisz na dec.bartlomiej09@gmail.com.",
+            sending: "Nadawanie sygnału..."
         },
         en: {
             title: "B. Dec | DevOps & Cloud Infrastructure Engineer | Interactive CV",
@@ -298,7 +300,9 @@ function initLanguageSystem() {
                 email: "thomas@company.com",
                 message: "Hi, we would like to discuss GCP platform maintenance and Kubernetes/GKE orchestration with you..."
             },
-            alert: "Recruitment signal transmitted successfully! As a DevOps, I will respond to your email faster than the SLA ;)"
+            alert: "Recruitment signal transmitted successfully! As a DevOps, I will respond to your email faster than the SLA ;)",
+            error: "An error occurred while transmitting the signal. Please try again or write directly to dec.bartlomiej09@gmail.com.",
+            sending: "Transmitting signal..."
         }
     };
 
@@ -353,13 +357,70 @@ function initLanguageSystem() {
         btnEn.addEventListener('click', () => setLanguage('en'));
     }
 
-    // Set up Contact Form submit handler for bilingual notifications
+    // Set up Contact Form submit handler with dynamic loading states and serverless API dispatch
     if (form) {
-        form.addEventListener('submit', (e) => {
+        const btnSubmit = document.getElementById('btn-submit-form');
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const currentLang = localStorage.getItem('cv-lang') || 'pl';
-            alert(dictionary[currentLang].alert);
-            form.reset();
+            
+            // 1. Enter loading state
+            let originalBtnContent = "";
+            if (btnSubmit) {
+                originalBtnContent = btnSubmit.innerHTML;
+                btnSubmit.disabled = true;
+                btnSubmit.style.opacity = "0.7";
+                btnSubmit.style.cursor = "not-allowed";
+                btnSubmit.innerHTML = `
+                    <svg class="btn-icon spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite; width: 18px; height: 18px; margin-right: 8px;">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-dasharray="31.4 31.4" fill="none"></circle>
+                    </svg>
+                    <span>${dictionary[currentLang].sending}</span>
+                `;
+            }
+
+            const payload = {
+                name: inputName ? inputName.value.trim() : "",
+                email: inputEmail ? inputEmail.value.trim() : "",
+                message: txtMessage ? txtMessage.value.trim() : ""
+            };
+
+            try {
+                // 2. Dispatch payload to Cloudflare Worker API
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    // 3. Success Alert and Reset Form
+                    alert(dictionary[currentLang].alert);
+                    form.reset();
+                } else {
+                    // 4. API Error
+                    console.error("[API ERROR] Form submission failed:", data.error || response.statusText);
+                    alert(dictionary[currentLang].error);
+                }
+            } catch (err) {
+                // 5. Network Error
+                console.error("[NETWORK ERROR] Failed to connect to API:", err);
+                alert(dictionary[currentLang].error);
+            } finally {
+                // 6. Reset button state
+                if (btnSubmit) {
+                    btnSubmit.disabled = false;
+                    btnSubmit.style.opacity = "";
+                    btnSubmit.style.cursor = "";
+                    btnSubmit.innerHTML = originalBtnContent;
+                }
+            }
         });
     }
 }
+
+
