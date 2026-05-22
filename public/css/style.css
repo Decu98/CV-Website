@@ -82,7 +82,7 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: 0;
     pointer-events: all; /* Enable mouse hover particle deflection */
@@ -727,6 +727,7 @@ html, body {
     color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition-fast);
+    word-break: break-all;
 }
 
 .channel-details a:hover {
