@@ -2,6 +2,14 @@ name = "bdec-portfolio"
 main = "worker.js"
 compatibility_date = "2026-05-22"
 
+# Enable Logpush for external log destinations (Datadog, New Relic, etc.)
+logpush = true
+
+# Cloudflare Workers Observability (Native Logs Engine)
+[observability]
+enabled = true
+head_sampling_rate = 1
+
 # Serverless Static Assets Configuration (Modern Wrangler v3+)
 # This maps the public assets folder directly to Cloudflare's Edge Network.
 [assets]
