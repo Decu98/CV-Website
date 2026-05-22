@@ -362,6 +362,7 @@ html, body {
     max-width: 620px;
     margin: 0 auto 2.5rem auto;
     font-weight: 300;
+    min-height: 150px;
 }
 
 /* Button UI Components */
@@ -438,6 +439,13 @@ html, body {
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
+}
+
+.features-grid .glass-card {
+    min-height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .glass-card::before {
@@ -857,6 +865,7 @@ html, body {
     .hero-subtitle {
         font-size: 0.95rem;
         margin-bottom: 2rem;
+        min-height: 185px;
     }
     
     .hero-actions {
@@ -890,9 +899,13 @@ html, body {
         padding: 1.75rem;
     }
     
+    .features-grid .glass-card {
+        min-height: 290px;
+    }
+    
     .project-card {
         padding: 1.75rem;
-        min-height: auto;
+        min-height: 320px;
     }
     
     .app-footer {
@@ -910,6 +923,10 @@ html, body {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        min-height: 250px;
     }
     
     .nav-bar {
