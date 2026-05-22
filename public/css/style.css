@@ -1050,3 +1050,73 @@ body.lang-en .lang-switch-glider {
     animation: spin 1s linear infinite;
     flex-shrink: 0;
 }
+
+/* -------------------------------------------------------------
+ * PREMIUM PRINT STYLES FOR RECRUITERS
+ * ------------------------------------------------------------- */
+@media print {
+    body, html {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt !important;
+    }
+    
+    #particle-canvas, 
+    .cosmic-orb, 
+    .app-header, 
+    .lang-switch-capsule, 
+    .hero-actions, 
+    .project-links, 
+    .app-footer, 
+    form,
+    .channel-icon,
+    svg {
+        display: none !important;
+    }
+    
+    .app-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .app-main {
+        padding: 0 !important;
+    }
+    
+    .glass-card {
+        background: #ffffff !important;
+        border: 1px solid #dddddd !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 1.5rem !important;
+        padding: 1.5rem !important;
+        border-radius: 8px !important;
+    }
+    
+    .glass-card::before {
+        display: none !important;
+    }
+    
+    .glass-card p, 
+    .glass-card h3,
+    .glass-card h4,
+    .glass-card li,
+    .glass-card strong {
+        color: #000000 !important;
+    }
+    
+    .skill-tag {
+        border: 1px solid #888888 !important;
+        color: #000000 !important;
+        background: transparent !important;
+        font-size: 0.8rem !important;
+        padding: 0.1rem 0.4rem !important;
+    }
+    
+    .features-grid,
+    .projects-grid {
+        display: block !important;
+    }
+}
