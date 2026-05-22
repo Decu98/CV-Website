@@ -925,11 +925,11 @@ html, body {
     }
     
     .lang-switch-capsule {
-        margin-top: 0.25rem;
-        flex-basis: 100%;
-        display: flex;
-        justify-content: center;
+        margin-top: 0.5rem;
         margin-left: 0;
+        width: 82px !important;
+        flex-grow: 0;
+        flex-shrink: 0;
     }
     
     .education-section .section-title,
